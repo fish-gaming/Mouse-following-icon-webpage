@@ -5,9 +5,19 @@
     <meta charset="UTF-8"> <!-- makes everything display correctly no matter the browser -->
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- have consistent size -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- makes internet explorer use latest rendering engine because its stupid and doesn't do that by default -->
-    <title>James' Mouse Following Website</title> <!-- webpage title -->
+    <title>James' Mouse Following Fish Website</title> <!-- webpage title -->
     <link rel="stylesheet" href="styles.css" /> <!-- lets me control how the website looks -->
 </head>
-<div class="circle"></div>
-<script src="script.js"></script>
+<body>
+    <button id="pauseBtn">Pause</button>
+    <div id="speedControl">
+        <label for="speedSlider">Speed:</label>
+        <input type="range" id="speedSlider" min="0.001" max="0.3" step="0.001" value="0.05">
+        <span id="speedValue">0.75</span>
+    </div>
+    <div class="circle">
+        <img src="funny_fish_low_quality.png" class="fish">
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>

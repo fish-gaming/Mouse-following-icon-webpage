@@ -1,22 +1,79 @@
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
+
+#speedControl {
+    position: fixed;
+    top: 70px;
+    left: 20px;
+    z-index: 1000;
+    padding: 10px;
+    background: rgba(255,255,255,0.8);
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+#speedControl label {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
 
 body {
-  min-height: 100lvh;
-  background-color: #050908;
+    min-height: 100lvh;
+    background-image: url(fish_tank.jpg); /* fish tank */
+    background-repeat: no-repeat; /* stops the image from repeating to fill space*/ 
+    background-position: center; /* centers the image */
+    background-size: cover; /* scales image to fit website */
 }
 
+#pauseBtn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: rgba(255,255,255,0.8);
+    border: 2px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+
+/* big update: the circle is now a fish */
 .circle {
-    --circle-size: 40px;
+    --circle-size: 200px;
     position: fixed;
     height: var(--circle-size);
     width: var(--circle-size);
-    border: 1px solid white;
-    border-radius: 100%;
-    top: calc(var(--circle-size) / 2 * -1);
-    left: calc(var(--circle-size) / 2 * -1);
+
+    top: calc(var(--circle-size) / -2);
+    left: calc(var(--circle-size) / -2);
+
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform-origin: center;
+    overflow: visible; 
+}
+
+/* Make the fish stretch dynamically with transforms */
+.fish {
+    width: 100%;
+    height: 60%;
+    object-fit: fill; /* allows distortion! */
     pointer-events: none;
 }
+
+#speedValue {
+    font-size: 18px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+
